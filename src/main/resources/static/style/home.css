@@ -1,5 +1,5 @@
 body {
-    background-color: #b6cbd3;
+    background-color: #cf3b3b;
     margin-left: 25%;
     margin-right: 25%;
 }
@@ -12,8 +12,20 @@ h2{
     text-align: center;
 }
 
+
 button.categories{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+}
+
+.sodaContainer>h4{
+    color: blueviolet;
+}
+
+.sodaContainer>img{
+    height: 100px;
+    width: 100px;
+    border-style: line;
+    border-width: 20px;
 }
