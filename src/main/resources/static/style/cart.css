@@ -1,41 +1,62 @@
+body {
+    background-image: url("/images/soda_clipart.jpg");
+    background-size: 15%;
+    background-repeat: repeat;
+    background-color: rgba(200,100,0,.5);
+    background-blend-mode: multiply;
+    margin: auto;
+}
+
 table {
+    background-color: rgb(185, 60, 60);
     border-collapse: collapse;
-    border: 2px solid rgb(192, 138, 138);
+    border: 15px solid rgb(31, 31, 31);
+    border-style: solid;
+    border-radius: 10px;
     font-family: sans-serif;
     font-size: 0.8rem;
     letter-spacing: 1px;
-  }
-  
-  caption {
+    margin: auto;
+    margin-top: 80px;
+    width: 800px;
+}
+
+caption {
+    background-color: rgb(185, 60, 60);
+    border: 15px solid rgb(31, 31, 31);
+    border-top: 0px;
     caption-side: bottom;
     padding: 10px;
     font-weight: bold;
-  }
-  
-  thead,
-  tfoot {
-    background-color: rgb(228 240 245);
-  }
-  
-  th,
-  td {
-    border: 1px solid rgb(172, 102, 102);
+}
+
+thead, 
+tfoot {
+    background-color: rgb(185, 60, 60);
+}
+
+th {
+    border: 1px solid rgb(160 160 160);
     padding: 8px 10px;
-  }
-  
-  td:last-of-type {
+}
+
+td {
+    border: 1px solid rgb(160 160 160);
+    padding: 8px 10px;
+}
+
+td:last-of-type {
     text-align: center;
-  }
-  
-  tbody > tr:nth-of-type(even) {
-    background-color: rgb(149, 162, 212);
-  }
-  
-  tfoot th {
-    text-align: right;
-  }
-  
-  tfoot td {
-    font-weight: bold;
-  }
-  
+}
+
+tbody > tr:nth-of-type(odd) {
+    background-color: rgb(230, 122, 122);
+}
+
+tfoot th {
+text-align: right;
+}
+
+tfoot td {
+font-weight: bold;
+};

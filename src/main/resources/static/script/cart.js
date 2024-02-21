@@ -73,7 +73,7 @@ async function populateCart(){
         row.appendChild(sodaQuantity);
 
         let sodaPrice = document.createElement("td")
-        sodaPrice.textContent = cart[i].price;
+        sodaPrice.textContent = Math.round(cart[i + 1]*cart[0].price*100)/100;
         row.appendChild(sodaPrice);
 
         //Create the add button, designed to be modified later
@@ -86,7 +86,14 @@ async function populateCart(){
         cartTable.appendChild(row);
     }
     document.getElementById('totalCans').textContent = totalCans;
-    document.getElementById('totalCost').textContent = totalCost;
+    document.getElementById('totalCost').textContent = Math.round(totalCost * 100) / 100; //Fix rounding errors
+}
+
+function redirectHome(){
+    window.location.href = "http://localhost:8080";
+}
+function redirectCheckout(){
+    window.location.href = "http://localhost:8080/checkout.html";
 }
 
 populateCart();

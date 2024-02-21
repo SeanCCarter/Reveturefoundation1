@@ -1,0 +1,12 @@
+body {
+    background-image: url("/images/soda_clipart.jpg");
+    background-size: 15%;
+    background-repeat: repeat;
+    background-color: rgba(200,100,0,.5);
+    background-blend-mode: multiply;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+  }

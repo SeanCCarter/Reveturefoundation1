@@ -57,7 +57,7 @@ function populateSodas(sodas){
         //console.log(soda);
         const sodaContainer = document.createElement("div");
         sodaContainer.className = "sodaContainer";
-        sodaContainer.setAttribute("item_id", soda.item_id);
+        sodaContainer.setAttribute("value", soda.item_id);
 
         let sodaTitle = document.createElement("h4");
         let sodaName = document.createTextNode(soda.name);
@@ -67,7 +67,7 @@ function populateSodas(sodas){
         sodaImage.src = soda.imageLocation;
 
         let sodaPrice = document.createElement("p");
-        let sodaPriceText = document.createTextNode(soda.price);
+        let sodaPriceText = document.createTextNode(`$${soda.price}`);
         sodaPrice.appendChild(sodaPriceText);
 
         let sodaDescription = document.createElement("p");
@@ -75,27 +75,28 @@ function populateSodas(sodas){
         sodaDescription.appendChild(sodaDescriptionText);
 
         //Create the add button, designed to be modified later
-        let cartDiv = document.createElement("div");
-        cartDiv.className = "cartInterface";
-        let addButton = document.createElement("button");
-        addButton.textContent = "Add to Cart";
-        addButton.value = soda.item_id;
-        addButton.onclick = addToCart;
-        cartDiv.appendChild(addButton);
+        // let cartDiv = document.createElement("div");
+        // cartDiv.className = "cartInterface";
+        // let addButton = document.createElement("button");
+        // addButton.textContent = "Add to Cart";
+        // addButton.value = soda.item_id;
+        // addButton.onclick = addToCart;
+        // cartDiv.appendChild(addButton);
 
         sodaContainer.appendChild(sodaTitle);
         sodaContainer.appendChild(sodaImage);
         sodaContainer.appendChild(sodaPrice);
         sodaContainer.appendChild(sodaDescription);
-        sodaContainer.appendChild(cartDiv);
+        // sodaContainer.appendChild(cartDiv);
+        sodaContainer.addEventListener("click", () => {addToCart(soda.item_id)});
         sodaNode.appendChild(sodaContainer); //Add the new soda element to the div on the page
     });
 }
 
-async function addToCart(event){
+async function addToCart(item_id){
     const account = JSON.parse(localStorage.getItem("account"))
     if (localStorage.getItem("loggedIn") == "true"){
-        await fetch(apiURL + `/cart/entries/${account.account_id}/${event.target.value}`, {method: "POST"});
+        await fetch(apiURL + `/cart/entries/${account.account_id}/${item_id}`, {method: "POST"});
         updatecartDisplay()
     }
     else {

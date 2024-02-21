@@ -1,0 +1,12 @@
+body {
+    background-image: url("/images/soda_clipart.jpg");
+    background-size: 15%;
+    background-repeat: repeat;
+    background-color: rgba(200,100,0,.5);
+    background-blend-mode: multiply;
+    margin: auto;
+}
+
+#AddressTable {
+    background-color: rgb(185, 60, 60);
+}
