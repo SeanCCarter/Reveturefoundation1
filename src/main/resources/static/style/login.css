@@ -6,6 +6,17 @@ body {
     background-blend-mode: multiply;
 }
 
+div {
+    background-color: rgb(185, 60, 60);
+    width: 500px;
+    border: 10px solid rgb(31, 31, 31);
+    border-style: solid;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 80px;
+    font-size: 20pt;
+}
+
 .center {
     margin-left: auto;
     margin-right: auto;

@@ -50,6 +50,10 @@ function logOut(){
     location.reload();
 }
 
+function registerUser(){
+    window.location.href = apiURL + "/register.html";
+}
+
 function populateSodas(sodas){
     let sodaNode = document.getElementById('sodas');
     sodaNode.innerHTML = "";
@@ -129,14 +133,21 @@ async function updatecartDisplay(){
 }
 
 function cartRedirect(){
-    window.location.href = apiURL + "/cart.html";
+    if(localStorage.getItem("loggedIn") == "true"){
+        window.location.href = apiURL + "/cart.html";
+    }
+    else{
+        alert("Please log in to view your cart!");
+    }
+    
 }
 
 //Should always run when page is first loaded
 fetchAllSoda();
 if(localStorage.getItem("loggedIn") == "true"){
     document.getElementById("loginButton").textContent = "Log Out"
-    updatecartDisplay()
+    document.getElementById("registerButton").hidden = true;
+    updatecartDisplay();
 }
 else{
     document.getElementById("loginButton").textContent = "Log In"

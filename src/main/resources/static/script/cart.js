@@ -54,8 +54,9 @@ async function populateCart(){
     let totalCans = 0;
     let totalCost = 0;
     for (let i = 0; i<cart.length; i+=2){
+        const newPrice = cart[i].price*cart[i+1];
         totalCans += cart[i+1];
-        totalCost += cart[i].price*cart[i+1];
+        totalCost += newPrice;
         let row = document.createElement("tr");
 
         let sodaName = document.createElement("td")
@@ -73,7 +74,7 @@ async function populateCart(){
         row.appendChild(sodaQuantity);
 
         let sodaPrice = document.createElement("td")
-        sodaPrice.textContent = Math.round(cart[i + 1]*cart[0].price*100)/100;
+        sodaPrice.textContent = Math.round(newPrice*100)/100;
         row.appendChild(sodaPrice);
 
         //Create the add button, designed to be modified later

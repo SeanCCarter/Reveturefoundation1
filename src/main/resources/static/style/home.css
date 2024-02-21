@@ -52,7 +52,12 @@ body {
     border-color: black;
     border-radius: 20px;
     padding: 30px;
-}
+
+#cartDisplay:active{
+    transform: scale(0.9);
+    border-color: rgb(104, 103, 103);
+}}
+
 button.categories{
     background-color: rgb(216, 91, 91);
     display: flex;
@@ -69,12 +74,23 @@ button.categories{
 #loginButton{
     background-color: rgb(125, 135, 136);
     align-self:top;
+    margin-bottom: 3px;
+    font-size: 15pt;
+    font-weight: bolder;
+    padding: 5px;
+    width:100%;
+}
+
+#registerButton{
+    background-color: rgb(125, 135, 136);
+    align-self:top;
     margin-bottom: 30px;
     font-size: 15pt;
     font-weight: bolder;
     padding: 5px;
     width:100%;
 }
+
 #sodas{
     display:flex;
     flex-wrap:wrap;
@@ -88,9 +104,11 @@ button.categories{
     overflow-y:scroll;
 }
 .sodaContainer{
+    display: flex;
+    flex-direction: column;
     align-content: center;
     background-color:  rgb(184, 159, 159);
-    flex-direction: column;
+    
     border-style: groove;
     border-radius: 10px;
     margin:30px 30px 10px 30px;
@@ -104,10 +122,6 @@ button.categories{
 h3 {
     text-align: center;
 }
-
-/* img{
-    
-} */
 
 div.cartInterface{
     align-self: bottom;
@@ -137,4 +151,5 @@ button.categories{
     width: 100px;
     border-style: line;
     border-width: 20px;
+    justify-self: center;
 }

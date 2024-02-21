@@ -1,9 +1,9 @@
 // Location my server is running on
 let apiURL = 'http://localhost:8080';
-const loginForm = document.getElementById('loginForm');
-loginForm.addEventListener("submit", verifyLogin);
+const registerForm = document.getElementById('registerForm');
+registerForm.addEventListener("submit", registerUser);
 
-async function verifyLogin(event) {
+async function registerUser(event) {
     event.preventDefault();
     const formData = new FormData(event.target);
     console.log('Attempting Login')
@@ -15,7 +15,7 @@ async function verifyLogin(event) {
 
     console.log(accountSubmission)
 
-    let response = await fetch(apiURL + "/login", {
+    let response = await fetch(apiURL + "/register", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -39,13 +39,8 @@ function handleSuccessfullLogin(accountData){
 }
 
 function handleUnsuccessfulLogin(response){
-    if (response.status === 401) {
-        const feedback = document.getElementById('loginResponse');
-        feedback.textContent = "Incorrect Username or Password!"
-    } else {
-        const feedback = document.getElementById('loginResponse');
-        feedback.textContent = "There was a problem logging in"
-    }
+    const feedback = document.getElementById('registerResponse');
+    feedback.textContent = "User could not be created! Try another Username!"
 }
 
 function redirectHome(){

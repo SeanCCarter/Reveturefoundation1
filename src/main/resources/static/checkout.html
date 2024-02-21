@@ -7,9 +7,8 @@
         <link rel="stylesheet" href="./style/checkout.css"/>
     </head>
     <body>
-            <form>
+            <form id="CheckoutForm">
             <table id="AddressTable">
-                <h3>Billing Address</h3>
                 
                 <tr><td><label for="fname"><i class=""></i> Full Name:</label></td>
                     <td><input type="text" id="fname" name="firstname" placeholder="John Smith" required></td></tr>
@@ -34,7 +33,10 @@
             </table>
 
             <table id="PaymentTable">
-                <h3>Payment</h3>
+                <caption>
+                    <button onclick="redirectHome()"> Return Home </button>
+                    <input id="submitOrder" type="submit" onclick="handleSubmitAndRedirect()"/>
+                </caption>
                 <tr><td><label for="cname">Name on Card</label></td>
                     <td><input type="text" id="cname" name="cardname" placeholder="John Smith" required></td></tr>
                 <tr><td><label for="ccnum">Credit card number</label></td>
@@ -47,9 +49,10 @@
                     <td><input type="text" id="cvv" name="cvv" placeholder="352" maxlength="3" required></td></tr>
             </table>
 
-            <input id="submitOrder" type="submit"/>
+            
             </form>
-    <script src="./script/checkout.js"></script>
+
+    <script type="text/javascript" src="./script/checkout.js"></script>
     </body>
 
 </html>
