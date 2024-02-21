@@ -33,8 +33,9 @@ async function verifyLogin(event) {
 
 function handleSuccessfullLogin(accountData){
     console.log("Successful Login");
-    const feedback = document.getElementById('loginResponse');
-    feedback.textContent = "You have logged in successfuly!"
+    localStorage.setItem('account', JSON.stringify(accountData));
+    localStorage.setItem("loggedIn", "true");
+    window.location.href = "http://localhost:8080";
 }
 
 function handleUnsuccessfulLogin(response){

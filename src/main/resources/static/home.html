@@ -11,16 +11,19 @@
             <h1>Soda World</h1>
             <h2> A Fizzy Suprise</h2>
             Welcome to Soda World! It's like a vending machine, but online. Delivery will be slightly slower.
+            <button id="loginButton" onclick="logginLoggout()">Log In</button>
         </div>
         <div id = content>
             <div class = "categories">
-                <button class = "categories">Diet Soda</button>
-                <button class = "categories">Cherry Soda</button>
-                <button class = "categories">Coca-Cola</button>
-                <button class = "categories">PepsiCo</button>
+                <button class = "categories" onclick="fetchAllSoda()" value="Diet">All</button>
+                <button class = "categories" onclick="fetchSodaByCategory(event)" value="Diet">Diet Soda</button>
+                <button class = "categories" onclick="fetchSodaByCategory(event)" value="Cherry">Cherry Soda</button>
+                <button class = "categories" onclick="fetchSodaBySeller(event)" value="Coca-Cola">Coca-Cola</button>
+                <button class = "categories" onclick="fetchSodaBySeller(event)" value="PepsiCo">PepsiCo</button>
             </div>
         </div>
         <div id = "sodas"></div>
+        <div id="cartDisplay" onclick="cartRedirect()">Cart!</div>
         <script src="./script/home.js"></script>
     </body>
     

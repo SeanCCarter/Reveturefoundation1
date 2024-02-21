@@ -57,6 +57,7 @@ public class CartService {
 
     //Creates a new cart entry with quantity 1
     //Adds one to cart if item already exists
+    @Transactional
     public Cart createCartEntry(int account_id, int item_id) throws ResourceNotFoundException{
         Optional<Account> optionalAccount= accountRepository.findById(account_id);
         Optional<Item> optionalItem= itemRepository.findById(item_id);

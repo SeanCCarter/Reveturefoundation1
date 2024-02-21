@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Soda World</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./style/cart.css"/>
+    </head>
+    <body>
+        <table>
+            <caption>
+              Please Review Your Cart
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Soda</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Price</th>
+                <th scope="col">Remove From Cart</th>
+              </tr>
+            </thead>
+            <tbody id = "cartTableBody">
+              <!-- Cart Entries will be generated here -->
+            </tbody>
+            <tfoot>
+              <tr>
+                <th scope="row" colspan="1">Totals</th>
+                <td id="totalCans">33</td>
+                <td id="totalCost">33</td>
+              </tr>
+            </tfoot>
+          </table>
+          
+    <script src="./script/cart.js"></script>
+    </body>
+
+</html>
